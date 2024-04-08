@@ -1,39 +1,38 @@
 :root {
-    --main-color: black;
-    --main-two:  gray;
-    --body-main: white;
-    --body-two: white;
-    --submit-btn-color: orange;
+  --main-color: #021E73;
+  --main-two: #0176F2;
+  --body-main: white;
+  --body-two: #800000;
+  --submit-btn-color: #FFD45A;
 }
 
 body {
-    margin: 0;
-    padding: 0;
-    color: black;
-    font-family: "Impact";
-    background-color: var(--body-main);
+  margin: 0;
+  padding: 0;
+  color: black;
+  font-family: "Impact";
+  background-color: var(--body-main);
 }
 
 header {
-    padding: 15px 0% 15px 0;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    background-color: var(--main-color);
-    box-shadow: 0 5px 35px var(--main-two);
+  padding: 15px 0% 15px 0;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--main-color);
+  box-shadow: 0 5px 15px var(--main-two);
 }
 
-
 header span {
-    color: white;
-    margin: 0px;
-    font-size: 4.5vw;
-    line-height: 1;
+  color: white;
+  margin: 0px;
+  font-size: 4.5vw;
+  line-height: 1;
 }
 
 #soccer-ball {
-    width: 85px;
-    padding: 10px;
+  width: 85px;
+  padding: 10px;
 }
