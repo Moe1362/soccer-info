@@ -1,7 +1,31 @@
 :root {
-    --main-color: white;
+    --main-color: black;
     --main-two: white;
     --body-main: white;
     --body-two: white;
     --submit-btn-color: orange;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    color: black;
+    font-family: "arial";
+    background-color: var(--body-main);
+}
+
+header {
+    padding: 15px 0% 15px 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    background-color: var(--main-color);
+}
+
+
+header span {
+    color: white;
+    margin: 0px;
+    font-size: 4vw;
+    line-height: 1.5;
 }
