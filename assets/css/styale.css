@@ -1,0 +1,114 @@
+:root {
+  --main-color: #021e73;
+  --main-two: #0176f2;
+  --body-main: white;
+  --body-two: #800000;
+  --submit-btn-color: #ffd45a;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  color: black;
+  font-family: "Impact";
+  background-color: var(--body-main);
+}
+
+header {
+  padding: 7px 0% 7px 0;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--main-color);
+}
+
+.title {
+  color: white;
+  margin: 0px;
+  font-size: 3.5vw;
+}
+
+#soccer-ball {
+  width: 85px;
+  padding: 10px;
+}
+
+.container {
+  width: 100%;
+  display: grid;
+  grid-template-areas: "sidebar main";
+  grid-template-columns: 250px auto;
+}
+
+.sidebar {
+  grid-area: sidebar;
+  height: 100vw;
+  background-color: var(--main-two);
+  font-size: 35px;
+  text-align: center;
+  
+}
+
+.main {
+  grid-area: main;
+  height: 100vw;
+  background-color: var(--body-main);
+}
+
+.dropdown-country {
+  position: relative;
+  margin-top: 15px;
+}
+
+#select {
+  appearance: none;
+  width: 95%;
+  font-size: 18px;
+  padding: 10px 15px 10px 15px;
+  background-color: #ffffff;
+  border: 1px solid var(--main-color);
+  border-radius: 10px;
+  color: #000000;
+  cursor: pointer;
+  outline: none;
+  box-shadow: 3px 3px 2px 0px darkblue;
+}
+
+#select:focus {
+  background: #f2f2f2;
+  border: 1px solid #5a7ec7;
+  border-radius: 5px;
+}
+
+.dropdown-country::after {
+  content: "";
+  position: absolute;
+  pointer-events: none;
+  top: 50%;
+  right: 10px;
+  transform: translate(0, -50%);
+  width: 12px;
+  height: 12px;
+  background-color: #000000;
+  clip-path: polygon(8% 17%, 0% 25%, 50% 84%, 100% 25%, 92% 17%, 50% 65%);
+}
+
+.dropdown-teams {
+  position: relative;
+  margin-top: 15px;
+}
+
+.dropdown-teams::after {
+  content: "";
+  position: absolute;
+  pointer-events: none;
+  top: 50%;
+  right: 10px;
+  transform: translate(0, -50%);
+  width: 12px;
+  height: 12px;
+  background-color: #000000;
+  clip-path: polygon(8% 17%, 0% 25%, 50% 84%, 100% 25%, 92% 17%, 50% 65%);
+} 
