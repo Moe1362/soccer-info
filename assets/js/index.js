@@ -54,7 +54,7 @@ function display() {
 
                                     const teamUrl = `https://api-football-v1.p.rapidapi.com/v3/teams?league=${data2.response[i].league.id}&season=2023`;
                                     console.log(teamUrl);
-                                    
+
                                 }
 
                             }
