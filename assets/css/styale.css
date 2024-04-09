@@ -1,9 +1,9 @@
 :root {
-  --main-color: #021E73;
-  --main-two: #0176F2;
+  --main-color: #021e73;
+  --main-two: #0176f2;
   --body-main: white;
   --body-two: #800000;
-  --submit-btn-color: #FFD45A;
+  --submit-btn-color: #ffd45a;
 }
 
 body {
@@ -15,7 +15,7 @@ body {
 }
 
 header {
-  padding: 10px 0% 10px 0;
+  padding: 7px 0% 7px 0;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -28,11 +28,119 @@ header {
 .title {
   color: white;
   margin: 0px;
-  font-size: 4vw;
-
+  font-size: 3.5vw;
 }
 
 #soccer-ball {
   width: 85px;
   padding: 10px;
 }
+
+.layout {
+  width: 1920px;
+  height: 1080px;
+
+  display: grid;
+  grid:
+    "sidebar body" 0.95fr
+    / 360px 0.9fr;
+  gap: 8px;
+
+  justify-content: center;
+  align-content: center;
+
+  color: white;
+}
+
+.sidebar {
+  grid-area: sidebar;
+  background-color: var(--main-two);
+  font-size: 35px;
+  text-align: center;
+}
+/* .body {
+  grid-area: body;
+  background-color: var(--submit-btn-color);
+  font-size: 55px;
+  padding-left: 25px; */
+
+/* } */
+
+
+.dropdown-country {
+	position: relative;
+  margin-top: 10px;
+}
+
+.dropdown-country select {
+	appearance: none;
+	width: 98%;
+	font-size: 18px;
+	padding: 10px 15px 10px 15px;
+	background-color: #FFFFFF;
+	border: 1px solid #C4D1EB;
+	border-radius: 10px;
+	color: #000000;
+	cursor: pointer;
+	outline: none;
+	box-shadow: 3px 3px 2px 0px darkblue;
+}
+
+.dropdown-country select:focus {
+	background: #F2F2F2;
+	border: 1px solid #5A7EC7;
+	border-radius: 5px;
+}
+
+.dropdown-country::after {
+	content: "";
+	position: absolute;
+	pointer-events: none;
+	top: 50%;
+	right: 10px;
+	transform: translate(0, -50%);
+	width: 12px;
+	height: 12px;
+	background-color: #000000;
+	clip-path: polygon(8% 17%, 0% 25%, 50% 84%, 100% 25%, 92% 17%, 50% 65%);
+}
+
+
+.dropdown-teams {
+	position: relative;
+  margin-top: 50%;
+}
+
+.dropdown-teams select {
+	appearance: none;
+	width: 98%;
+	font-size: 18px;
+	padding: 10px 15px 10px 15px;
+	background-color: #FFFFFF;
+	border: 1px solid #C4D1EB;
+	border-radius: 10px;
+	color: #000000;
+	cursor: pointer;
+	outline: none;
+	box-shadow: 3px 3px 2px 0px darkblue;
+}
+
+.dropdown-teams select:focus {
+	background: #F2F2F2;
+	border: 1px solid #5A7EC7;
+	border-radius: 5px;
+}
+
+.dropdown-teams::after {
+	content: "";
+	position: absolute;
+	pointer-events: none;
+	top: 50%;
+	right: 10px;
+	transform: translate(0, -50%);
+	width: 12px;
+	height: 12px;
+	background-color: #000000;
+	clip-path: polygon(8% 17%, 0% 25%, 50% 84%, 100% 25%, 92% 17%, 50% 65%);
+}
+
