@@ -58,7 +58,7 @@ header {
 
 .dropdown-country {
   position: relative;
-  margin-top: 13px;
+  margin-top: 37px;
 }
 
 #select-country {
@@ -96,7 +96,7 @@ header {
 
 .dropdown-teams {
   position: relative;
-  margin-top: 80px;
+  margin-top: 47px;
 }
 
 .dropdown-teams::after {
@@ -132,7 +132,34 @@ header {
   border-radius: 5px;
 }
 
-#team-name {
-	font-size: 50px;
-	background-color: #800000;
+.league-container {
+  width: 60%;
+  font-size: 40px;
+  background-color: #800000;
+  padding: 5px 5px;
+  margin: 20px auto;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: center;
+}
+
+#league-name {
+	text-align: center;
+	width: 100%;
+}
+
+
+
+.team-info {
+  width: 50%;
+  font-size: 30px;
+  background-color: var(--submit-btn-color);
+  padding: 15px 5px;
+  margin: 20px 10px;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: center;
 }
