@@ -130,31 +130,36 @@ header {
   background: #f2f2f2;
   border: 1px solid #5a7ec7;
   border-radius: 5px;
-  
+}
+
+.league-container {
+  width: 60%;
+  font-size: 40px;
+  background-color: #800000;
+  padding: 5px 5px;
+  margin: 20px auto;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: center;
 }
 
 #league-name {
-	width: 60%;
-	font-size: 50px;
-	background-color: #800000;
-	padding: 15px 5px;
-	margin: 20px 10px;
-	display: flex;
-	flex-wrap: wrap;
-	justify-content: space-between;
-	align-items: baseline;
-  
-  
+	text-align: center;
+	width: 100%;
 }
 
-#team-info {
-	width: 50%;
-	font-size: 25px;
-	background-color: var(--submit-btn-color);
-	padding: 15px 5px;
-	margin: 20px 10px;
-	display: flex;
-	flex-wrap: wrap;
-	justify-content: space-between;
-	align-items: baseline;
+
+
+.team-info {
+  width: 50%;
+  font-size: 30px;
+  background-color: var(--submit-btn-color);
+  padding: 15px 5px;
+  margin: 20px 10px;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: center;
 }
