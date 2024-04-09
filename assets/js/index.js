@@ -3,6 +3,7 @@ const url = 'https://api-football-v1.p.rapidapi.com/v3/countries';
 
 
 
+
 const options = {
     method: 'GET',
     headers: {
@@ -10,6 +11,7 @@ const options = {
         'X-RapidAPI-Host': 'api-football-v1.p.rapidapi.com'
     }
 };
+
 
 
 
@@ -47,11 +49,24 @@ function display() {
 
                                         const teamName = document.querySelector("#select-team");
                                         teamName.innerHTML = "";
+                                        const defaultOption = document.createElement("option");
+                                        defaultOption.text = "Select Team";
+                                        teamName.appendChild(defaultOption);
                                         
                                         for (let i = 0; i < data3.response.length; i++) {
                                             const options = document.createElement("option");
                                             options.text = data3.response[i].team.name;
                                             teamName.appendChild(options);
+
+                                            for(let k=0;k<data3.response.length;k++){
+                                                console.log(data3.response[i].team.logo,data3.response[i].team.name,data3.response[i].team.founded);
+                                            }
+                                            for(let p=0;p<data3.response.length;p++){
+                                                console.log(data3.response[i].venue.city,data3.response[i].venue.name,data3.response[i].venue.image,data3.response[i].venue.capacity);
+
+
+
+                                        }
 
 
 
@@ -70,15 +85,29 @@ function display() {
                                     const teamUrl = `https://api-football-v1.p.rapidapi.com/v3/teams?league=${data2.response[i].league.id}&season=2023`;
                                     fetch(teamUrl, options).then(function (response) {
                                         return response.json();
-                                    }).then(function (data4) {
-                                        console.log(data4);
+                                    }).then(function (data3) {
+                                        console.log(data3);
                                         const teamName = document.querySelector("#select-team");
                                         teamName.innerHTML = "";
+
+                                        const defaultOption = document.createElement("option");
+                                        defaultOption.text = "Select Team";
+                                        teamName.appendChild(defaultOption);
                                         
-                                        for (let i = 0; i < data4.response.length; i++) {
+                                        for (let i = 0; i < data3.response.length; i++) {
                                             const options = document.createElement("option");
-                                            options.text = data4.response[i].team.name;
+                                            options.text = data3.response[i].team.name;
                                             teamName.appendChild(options);
+
+                                            for(let k=0;k<data3.response.length;k++){
+                                                console.log(data3.response[i].team.logo,data3.response[i].team.name,data3.response[i].team.founded);
+                                            }
+                                            for(let p=0;p<data3.response.length;p++){
+                                                console.log(data3.response[i].venue.city,data3.response[i].venue.name,data3.response[i].venue.image,data3.response[i].venue.capacity);
+
+
+
+                                        }
 
 
 
@@ -101,11 +130,23 @@ function display() {
                                         console.log(data5);
                                         const teamName = document.querySelector("#select-team");
                                         teamName.innerHTML = "";
+                                        const defaultOption = document.createElement("option");
+                                        defaultOption.text = "Select Team";
+                                        teamName.appendChild(defaultOption);
                                         
                                         for (let i = 0; i < data5.response.length; i++) {
                                             const options = document.createElement("option");
                                             options.text = data5.response[i].team.name;
                                             teamName.appendChild(options);
+                                            for(let k=0;k<data5.response.length;k++){
+                                                console.log(data5.response[i].team.logo,data5.response[i].team.name,data5.response[i].team.founded);
+                                            }
+                                            for(let p=0;p<data5.response.length;p++){
+                                                console.log(data5.response[i].venue.city,data5.response[i].venue.name,data5.response[i].venue.image,data5.response[i].venue.capacity);
+
+
+
+                                        }
 
 
 
@@ -128,11 +169,24 @@ function display() {
                                         console.log(data6);
                                         const teamName = document.querySelector("#select-team");
                                         teamName.innerHTML = "";
+                                        const defaultOption = document.createElement("option");
+                                        defaultOption.text = "Select Team";
+                                        teamName.appendChild(defaultOption);
                                         
                                         for (let i = 0; i < data6.response.length; i++) {
                                             const options = document.createElement("option");
                                             options.text = data6.response[i].team.name;
                                             teamName.appendChild(options);
+
+                                            for(let k=0;k<data6.response.length;k++){
+                                                console.log(data6.response[i].team.logo,data6.response[i].team.name,data6.response[i].team.founded);
+                                            }
+                                            for(let p=0;p<data6.response.length;p++){
+                                                console.log(data6.response[i].venue.city,data6.response[i].venue.name,data6.response[i].venue.image,data6.response[i].venue.capacity);
+
+
+
+                                        }
 
 
 
@@ -151,19 +205,31 @@ function display() {
                                     const teamUrl = `https://api-football-v1.p.rapidapi.com/v3/teams?league=${data2.response[i].league.id}&season=2023`;
                                     fetch(teamUrl, options).then(function (response) {
                                         return response.json();
-                                    }).then(function (data4) {
-                                        console.log(data4);
+                                    }).then(function (data3) {
+                                        console.log(data3);
                                         const teamName = document.querySelector("#select-team");
                                         teamName.innerHTML = "";
+                                        const defaultOption = document.createElement("option");
+                                        defaultOption.text = "Select Team";
+                                        teamName.appendChild(defaultOption);
+
                                         
-                                        for (let i = 0; i < data4.response.length; i++) {
+                                        for (let i = 0; i < data3.response.length; i++) {
                                             const options = document.createElement("option");
-                                            options.text = data4.response[i].team.name;
+                                            options.text = data3.response[i].team.name;
                                             teamName.appendChild(options);
+
+                                            for(let k=0;k<data3.response.length;k++){
+                                                console.log(data3.response[i].team.logo,data3.response[i].team.name,data3.response[i].team.founded);
+
+                                            }
+                                            for(let p=0;p<data3.response.length;p++){
+                                                console.log(data3.response[i].venue.city,data3.response[i].venue.name,data3.response[i].venue.image,data3.response[i].venue.capacity);
 
 
 
                                         }
+                                    }
                                     })
 
                                 }
