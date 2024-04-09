@@ -62,7 +62,7 @@ header {
   margin-top: 15px;
 }
 
-.dropdown-country select {
+#select {
   appearance: none;
   width: 95%;
   font-size: 18px;
@@ -76,7 +76,7 @@ header {
   box-shadow: 3px 3px 2px 0px darkblue;
 }
 
-.dropdown-country select:focus {
+#select:focus {
   background: #f2f2f2;
   border: 1px solid #5a7ec7;
   border-radius: 5px;
@@ -100,26 +100,6 @@ header {
   margin-top: 15px;
 }
 
-.dropdown-teams select {
-  appearance: none;
-  width: 95%;
-  font-size: 18px;
-  padding: 10px 15px 10px 15px;
-  background-color: #ffffff;
-  border: 1px solid var(--main-color);
-  border-radius: 10px;
-  color: #000000;
-  cursor: pointer;
-  outline: none;
-  box-shadow: 3px 3px 2px 0px darkblue;
-}
-
-.dropdown-teams select:focus {
-  background: #f2f2f2;
-  border: 1px solid #5a7ec7;
-  border-radius: 5px;
-}
-
 .dropdown-teams::after {
   content: "";
   position: absolute;
@@ -131,4 +111,4 @@ header {
   height: 12px;
   background-color: #000000;
   clip-path: polygon(8% 17%, 0% 25%, 50% 84%, 100% 25%, 92% 17%, 50% 65%);
-}
+} 
