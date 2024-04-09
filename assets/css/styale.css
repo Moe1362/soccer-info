@@ -78,7 +78,7 @@ header {
 	font-size: 18px;
 	padding: 10px 15px 10px 15px;
 	background-color: #FFFFFF;
-	border: 1px solid #C4D1EB;
+	border: 1px solid var(--main-color);
 	border-radius: 10px;
 	color: #000000;
 	cursor: pointer;
@@ -117,7 +117,7 @@ header {
 	font-size: 18px;
 	padding: 10px 15px 10px 15px;
 	background-color: #FFFFFF;
-	border: 1px solid #C4D1EB;
+	border: 1px solid var(--main-color);
 	border-radius: 10px;
 	color: #000000;
 	cursor: pointer;
