@@ -1,6 +1,8 @@
 const divEl = document.querySelector('#click');
 const url = 'https://api-football-v1.p.rapidapi.com/v3/countries';
 
+const teamUrl = `https://api-football-v1.p.rapidapi.com/v3/teams?league=39&season=2021`;
+
 const options = {
 	method: 'GET',
 	headers: {
@@ -18,7 +20,8 @@ function display() {
         const countriesId = data.response;
         console.log(countriesId);
         for(let i=0;i<countriesId.length;i++){
-            console.log(countriesId[i].name);
+            const leagueUrl = `https://api-football-v1.p.rapidapi.com/v3/leagues?code=${countriesId[i].code}`;
+            fetch()
         }
     });
 }
