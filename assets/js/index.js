@@ -1,5 +1,6 @@
 const divEl = document.querySelector('#click');
-const url = 'https://api-football-v1.p.rapidapi.com/v3/leagues?code=GB';
+const url = 'https://api-football-v1.p.rapidapi.com/v3/countries';
+
 const options = {
 	method: 'GET',
 	headers: {
@@ -14,7 +15,11 @@ function display() {
     fetch(url, options).then(function (response) {
         return response.json();
     }).then(function (data) {
-        console.log(data);
+        const countriesId = data.response;
+        console.log(countriesId);
+        for(let i=0;i<countriesId.length;i++){
+            console.log(countriesId[i].name);
+        }
     });
 }
 
