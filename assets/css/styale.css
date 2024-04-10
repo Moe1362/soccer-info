@@ -144,10 +144,11 @@ header {
   font-size: 60px;
   color: black;
   border: 2px solid black;
+  border-radius: 20px;
   background-color: #f2f2f2;
   opacity: 0.5;
   padding: 5px 5px;
-  margin: 20px auto;
+  margin: 5px auto;
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
@@ -163,7 +164,6 @@ header {
   width: 50%;
   font-size: 30px;
   color: #f2f2f2;
-  /* background-color: var(--submit-btn-color); */
   padding: 15px 5px;
   margin: 20px 10px;
   display: flex;
