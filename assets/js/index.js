@@ -1,7 +1,6 @@
-const divEl = document.querySelector('#click');
+
 const url = 'https://api-football-v1.p.rapidapi.com/v3/countries';
-const leagueContainerEl = document.querySelector('.league-container');
-const teamInfoEl = document.querySelector('.team-info');
+const mainEl = document.querySelector('.main');
 
 const options = {
     method: 'GET',
@@ -442,6 +441,8 @@ function display() {
 }
 
 function getCountryCode() {
+    resetDisplay();
+
     const userCountry = document.querySelector("#select-country").value;
 
     fetch(url, options).then(function (response) {
@@ -494,6 +495,8 @@ function getLeagues(countryCode) {
 }
 
 function displayLeagueInfo(leagueData) {
+    const leagueContainerEl = document.querySelector('#league-container');
+
     const leagueNameEl = document.createElement("p");
     const leagueLogoEl = document.createElement("img");
 
@@ -503,6 +506,7 @@ function displayLeagueInfo(leagueData) {
     leagueContainerEl.innerHTML = "";
 
     leagueNameEl.textContent = leagueData.league.name;
+    leagueContainerEl.setAttribute("class", "league-container")
     leagueContainerEl.appendChild(leagueNameEl);
     leagueContainerEl.appendChild(leagueLogoEl);
 }
@@ -572,6 +576,8 @@ function selectTeam() {
 }
 
 function createTeamInfo(teamData) {
+    const teamInfoEl = document.querySelector('#team-info');
+
     console.log(teamData);
 
     const teamNameEl = document.createElement("p");
@@ -583,12 +589,14 @@ function createTeamInfo(teamData) {
     teamFoundedEl.textContent = `Founded in: ${teamData.teamFounded}`
 
     teamInfoEl.innerHTML = "";
+    teamInfoEl.setAttribute("class", "team-info");
     teamInfoEl.appendChild(teamNameEl);
     teamInfoEl.appendChild(teamLogoEl);
     teamInfoEl.appendChild(teamFoundedEl);
 }
 
 function createTeamVenue(teamData) {
+    const teamInfoEl = document.querySelector('#team-info');
     console.log(teamData);
                                         
     const venueContainerEl = document.createElement("div");
@@ -607,6 +615,18 @@ function createTeamVenue(teamData) {
     venueContainerEl.appendChild(venueImageEl);
     venueContainerEl.appendChild(venueCapacityEl);
     teamInfoEl.appendChild(venueContainerEl);
+}
+
+function resetDisplay() {
+    const leagueSection = document.createElement("section");
+    const teamSection = document.createElement("section");
+
+    mainEl.textContent = "";
+    leagueSection.setAttribute("id", "league-container");
+    teamSection.setAttribute("id", "team-info");
+
+    mainEl.appendChild(leagueSection);
+    mainEl.appendChild(teamSection);
 }
 
 document.querySelector("#select-country").addEventListener('change', getCountryCode);
