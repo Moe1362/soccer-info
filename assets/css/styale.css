@@ -34,6 +34,19 @@ header {
   color: white;
   margin: 0px;
   font-size: 3.5vw;
+  text-shadow:
+  -2px -2px 0 #000,  
+  2px -2px 0 #000,
+ -2px  2px 0 #000,
+  2px  2px 0 #000,
+ -1px -2px 0 #000,
+  1px -2px 0 #000,
+ -2px -1px 0 #000,
+  2px -1px 0 #000,
+ -2px  1px 0 #000,
+  2px  1px 0 #000,
+ -1px  2px 0 #000,
+  1px  2px 0 #000;
 }
 
 #soccer-ball {
@@ -61,7 +74,6 @@ header {
 .main {
   grid-area: main;
   height: 100vw;
-  
 }
 
 .dropdown-country {
@@ -142,10 +154,14 @@ header {
 
 .league-container {
   width: 60%;
-  font-size: 40px;
-  background-color: #800000;
+  font-size: 60px;
+  color: black;
+  border: 2px solid black;
+  border-radius: 20px;
+  background-color: #f2f2f2;
+  opacity: 0.5;
   padding: 5px 5px;
-  margin: 20px auto;
+  margin: 5px auto;
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
@@ -153,16 +169,14 @@ header {
 }
 
 #league-name {
-	text-align: center;
-	width: 100%;
+  text-align: center;
+  width: 100%;
 }
-
-
 
 .team-info {
   width: 50%;
-  font-size: 30px;
-  background-color: var(--submit-btn-color);
+  font-size: 50px;
+  color: #f2f2f2;
   padding: 15px 5px;
   margin: 20px 10px;
   display: flex;
@@ -170,4 +184,25 @@ header {
   flex-direction: column;
   justify-content: space-between;
   text-align: center;
+  text-shadow:
+  -2px -2px 0 #000,  
+  2px -2px 0 #000,
+ -2px  2px 0 #000,
+  2px  2px 0 #000,
+ -1px -2px 0 #000,
+  1px -2px 0 #000,
+ -2px -1px 0 #000,
+  2px -1px 0 #000,
+ -2px  1px 0 #000,
+  2px  1px 0 #000,
+ -1px  2px 0 #000,
+  1px  2px 0 #000;
+}
+
+.team-info img {
+  width: 200px;
+  height: 200px;
+  object-fit: contain;
+  margin: 0 auto;
+
 }
