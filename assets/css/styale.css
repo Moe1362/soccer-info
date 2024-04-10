@@ -11,11 +11,15 @@ body {
   padding: 0;
   color: black;
   font-family: "Impact";
-  background-color: var(--body-main);
+  background-image: url("../images/soccerbacklarge.jpg");
+  background-repeat: no-repeat;
+  background-size: 100%;
 }
 
 header {
-  padding: 7px 0% 7px 0;
+  margin: 20px 20px;
+  padding: 7px 7px;
+  border-radius: 20px;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -45,6 +49,8 @@ header {
 .sidebar {
   grid-area: sidebar;
   height: 100vw;
+  margin-left: 20px;
+  border-radius: 20px;
   background-color: var(--main-two);
   font-size: 35px;
   text-align: center;
@@ -53,12 +59,12 @@ header {
 .main {
   grid-area: main;
   height: 100vw;
-  background-color: var(--body-main);
+  
 }
 
 .dropdown-country {
   position: relative;
-  margin-top: 13px;
+  margin-top: 39px;
 }
 
 #select-country {
@@ -96,7 +102,7 @@ header {
 
 .dropdown-teams {
   position: relative;
-  margin-top: 80px;
+  margin-top: 55px;
 }
 
 .dropdown-teams::after {
@@ -132,7 +138,34 @@ header {
   border-radius: 5px;
 }
 
-#team-name {
-	font-size: 50px;
-	background-color: #800000;
+.league-container {
+  width: 60%;
+  font-size: 40px;
+  background-color: #800000;
+  padding: 5px 5px;
+  margin: 20px auto;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: center;
+}
+
+#league-name {
+	text-align: center;
+	width: 100%;
+}
+
+
+
+.team-info {
+  width: 50%;
+  font-size: 30px;
+  background-color: var(--submit-btn-color);
+  padding: 15px 5px;
+  margin: 20px 10px;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: center;
 }
