@@ -6,7 +6,7 @@ const teamInfoEl = document.querySelector('.team-info');
 const options = {
     method: 'GET',
     headers: {
-        'X-RapidAPI-Key': 'aae0c5abcemsh6bf0e83148c0bd5p195e59jsnb058a75e4341',
+        'X-RapidAPI-Key': 'c4a75d9930msh9a64489fdec6eddp1ecc48jsnf0c05560708b',
         'X-RapidAPI-Host': 'api-football-v1.p.rapidapi.com'
     }
 };
