@@ -11,6 +11,8 @@ const options = {
     }
 };
 
+let teamInfoList = [];
+
 function display() {
     const userCountry = document.querySelector("#select-country").value;
     
@@ -439,4 +441,173 @@ function display() {
     });
 }
 
-document.querySelector("#select-country").addEventListener('change', display);
+function getCountryCode() {
+    const userCountry = document.querySelector("#select-country").value;
+
+    fetch(url, options).then(function (response) {
+        return response.json();
+    }).then(function (data) {
+        const countriesId = data.response;
+        console.log(countriesId);
+
+        for (let i = 0; i < countriesId.length; i++) {
+            if (countriesId[i].name === userCountry) {
+                console.log(countriesId[i]);
+                console.log(countriesId[i].code);
+
+                getLeagues(countriesId[i].code);
+            }
+        }
+    });
+}
+
+function getLeagues(countryCode) {
+    const countryCodeUrl = `https://api-football-v1.p.rapidapi.com/v3/leagues?code=${countryCode}`;
+
+    fetch(countryCodeUrl, options).then(function (response) {
+        return response.json();
+    }).then(function (data) {
+        console.log(data);
+
+        for (let i = 0; i < data.response.length; i++) {
+            console.log(data.response[i]);
+
+            if ((data.response[i].league.name === "Serie A" && data.response[i].country.name === "Italy") ||
+            (data.response[i].league.name === "La Liga" && data.response[i].country.name === "Spain") ||
+            (data.response[i].league.name === "Premier League" && data.response[i].country.name === "England") ||
+            (data.response[i].league.name === "Bundesliga" && data.response[i].country.name === "Germany") ||
+            (data.response[i].league.name === "Ligue 1" && data.response[i].country.name === "France")) {
+                displayLeagueInfo(data.response[i]);
+
+                for (let j = 0; j < data.response[i].seasons.length; j++) {
+                    // console.log(data2.response[i].seasons[j]);
+                    console.log(data.response[i].seasons[j].year === 2023);
+                    
+                    if (data.response[i].seasons[j].year === 2023) {
+                        console.log(data.response[i].seasons[j]);
+                        getTeams(data.response[i].league.id);
+                    }
+                }
+            }
+        }
+    });
+}
+
+function displayLeagueInfo(leagueData) {
+    const leagueNameEl = document.createElement("p");
+    const leagueLogoEl = document.createElement("img");
+
+    leagueNameEl.setAttribute("class", "league-name");
+    leagueLogoEl.setAttribute("src", `${leagueData.league.logo}`)
+
+    leagueContainerEl.innerHTML = "";
+
+    leagueNameEl.textContent = leagueData.league.name;
+    leagueContainerEl.appendChild(leagueNameEl);
+    leagueContainerEl.appendChild(leagueLogoEl);
+}
+
+function getTeams(leagueData) {
+    const teamUrl = `https://api-football-v1.p.rapidapi.com/v3/teams?league=${leagueData}&season=2023`;
+
+    fetch(teamUrl, options).then(function (response) {
+        return response.json();
+    }).then(function (data) {
+        console.log(data);
+
+        populateSelectTeam(data);
+        populateTeamInfoList(data);
+    });
+}
+
+function populateSelectTeam(teamData) {
+    const selectTeamEl = document.querySelector("#select-team");
+    selectTeamEl.innerHTML = "";
+    const defaultOption = document.createElement("option");
+    defaultOption.text = "Select Team";
+    selectTeamEl.appendChild(defaultOption);
+                                        
+    for (let i = 0; i < teamData.response.length; i++) {
+        const option = document.createElement("option");
+        option.text = teamData.response[i].team.name;
+        selectTeamEl.appendChild(option);
+    }
+}
+
+function populateTeamInfoList(teamData) {
+    teamInfoList = [];
+
+    for(let i=0; i < teamData.response.length; i++) {
+        const teamInfo = {
+            teamName: teamData.response[i].team.name,
+            teamLogo: teamData.response[i].team.logo,
+            teamFounded: teamData.response[i].team.founded,
+            venueCity: teamData.response[i].venue.city,
+            venueName: teamData.response[i].venue.name,
+            venueImage: teamData.response[i].venue.image,
+            venueCapacity: teamData.response[i].venue.capacity
+        }
+
+        teamInfoList.push(teamInfo);
+        //localStorage.setItem('team-list', JSON.stringify(teamInfoList));
+    }
+
+    console.log(teamInfoList);
+}
+
+function selectTeam() {
+    const selection = document.querySelector("#select-team").value;
+    console.log(selection);
+
+    //teamInfoList = JSON.parse(localStorage.getItem('team-info'));
+    console.log(teamInfoList);
+
+    for (let i = 0; i < teamInfoList.length; i++) {
+        console.log(teamInfoList[i].teamName);
+        if (teamInfoList[i].teamName === selection) {
+            createTeamInfo(teamInfoList[i]);
+            createTeamVenue(teamInfoList[i]);
+        }
+    }
+}
+
+function createTeamInfo(teamData) {
+    console.log(teamData);
+
+    const teamNameEl = document.createElement("p");
+    const teamLogoEl = document.createElement("img");
+    const teamFoundedEl = document.createElement("p");
+
+    teamNameEl.textContent = teamData.teamName;
+    teamLogoEl.setAttribute("src", `${teamData.teamLogo}`);
+    teamFoundedEl.textContent = `Founded in: ${teamData.teamFounded}`
+
+    teamInfoEl.innerHTML = "";
+    teamInfoEl.appendChild(teamNameEl);
+    teamInfoEl.appendChild(teamLogoEl);
+    teamInfoEl.appendChild(teamFoundedEl);
+}
+
+function createTeamVenue(teamData) {
+    console.log(teamData);
+                                        
+    const venueContainerEl = document.createElement("div");
+    const venueCityEl = document.createElement("p");
+    const venueNameEl = document.createElement("p");
+    const venueImageEl = document.createElement("img");
+    const venueCapacityEl = document.createElement("p");
+
+    venueCityEl.textContent = `Located in: ${teamData.venueCity}`;
+    venueNameEl.textContent = `Venue: ${teamData.venueName}`;
+    venueImageEl.setAttribute("src", `${teamData.venueImage}`);
+    venueCapacityEl.textContent = `Venue Capacity: ${teamData.venueCapacity}`
+
+    venueContainerEl.appendChild(venueCityEl);
+    venueContainerEl.appendChild(venueNameEl);
+    venueContainerEl.appendChild(venueImageEl);
+    venueContainerEl.appendChild(venueCapacityEl);
+    teamInfoEl.appendChild(venueContainerEl);
+}
+
+document.querySelector("#select-country").addEventListener('change', getCountryCode);
+document.querySelector("#select-team").addEventListener('change', selectTeam);
