@@ -11,9 +11,11 @@ body {
   padding: 0;
   color: black;
   font-family: "Impact";
-  background-image: url("../images/soccerbacklarge.jpg");
-  background-repeat: no-repeat;
-  background-size: 100%;
+  background: url("../images/soccerbacklarge.jpg") no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }
 
 header {
@@ -59,7 +61,6 @@ header {
 .main {
   grid-area: main;
   height: 100vw;
-  
 }
 
 .dropdown-country {
@@ -140,8 +141,11 @@ header {
 
 .league-container {
   width: 60%;
-  font-size: 40px;
-  background-color: #800000;
+  font-size: 60px;
+  color: black;
+  border: 2px solid black;
+  background-color: #f2f2f2;
+  opacity: 0.5;
   padding: 5px 5px;
   margin: 20px auto;
   display: flex;
@@ -151,16 +155,15 @@ header {
 }
 
 #league-name {
-	text-align: center;
-	width: 100%;
+  text-align: center;
+  width: 100%;
 }
-
-
 
 .team-info {
   width: 50%;
   font-size: 30px;
-  background-color: var(--submit-btn-color);
+  color: #f2f2f2;
+  /* background-color: var(--submit-btn-color); */
   padding: 15px 5px;
   margin: 20px 10px;
   display: flex;
