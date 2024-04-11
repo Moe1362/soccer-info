@@ -1,4 +1,3 @@
-const divEl = document.querySelector('#click');
 const url = 'https://api-football-v1.p.rapidapi.com/v3/countries';
 const mainEl = document.querySelector('.main');
 
@@ -24,14 +23,14 @@ function display() {
         for (let i = 0; i < countriesId.length; i++) {
             //console.log(countriesId[i].code, countriesId[i].flag);
             if (countriesId[i].name === userCountry) {
-                console.log(countriesId[i]);
-                console.log(countriesId[i].code);
+                //console.log(countriesId[i]);
+                //console.log(countriesId[i].code);
                 const countryCodeUrl = `https://api-football-v1.p.rapidapi.com/v3/leagues?code=${countriesId[i].code}`;
                 
                 fetch(countryCodeUrl, options).then(function (response) {
                     return response.json();
                 }).then(function (data2) {
-                    console.log(data2);
+                    //console.log(data2);
                     
                     for (let i = 0; i < data2.response.length; i++) {
                         console.log(data2.response[i]);
@@ -141,7 +140,7 @@ function display() {
                                         return response.json();
                                     }).then(function (data3) {
                                         
-                                        console.log(data3);
+                                        //console.log(data3);
                                         const teamName = document.querySelector("#select-team");
                                         teamName.innerHTML = "";
 
@@ -546,6 +545,7 @@ function populateTeamInfoList(teamData) {
             teamName: teamData.response[i].team.name,
             teamLogo: teamData.response[i].team.logo,
             teamFounded: teamData.response[i].team.founded,
+            venueAddress: teamData.response[i].venue.address,
             venueCity: teamData.response[i].venue.city,
             venueName: teamData.response[i].venue.name,
             venueImage: teamData.response[i].venue.image,
@@ -561,24 +561,24 @@ function populateTeamInfoList(teamData) {
 
 function selectTeam() {
     const selection = document.querySelector("#select-team").value;
-    console.log(selection);
+    //console.log(selection);
 
     //teamInfoList = JSON.parse(localStorage.getItem('team-info'));
-    console.log(teamInfoList);
+    //console.log(teamInfoList);
 
     for (let i = 0; i < teamInfoList.length; i++) {
-        console.log(teamInfoList[i].teamName);
+        //console.log(teamInfoList[i].teamName);
         if (teamInfoList[i].teamName === selection) {
             createTeamInfo(teamInfoList[i]);
             createTeamVenue(teamInfoList[i]);
+            getCoords(teamInfoList[i]);
         }
     }
 }
 
 function createTeamInfo(teamData) {
     const teamInfoEl = document.querySelector('#team-info');
-
-    console.log(teamData);
+    //console.log(teamData);
 
     const teamNameEl = document.createElement("p");
     const teamLogoEl = document.createElement("img");
@@ -597,7 +597,7 @@ function createTeamInfo(teamData) {
 
 function createTeamVenue(teamData) {
     const teamInfoEl = document.querySelector('#team-info');
-    console.log(teamData);
+    //console.log(teamData);
                                         
     const venueContainerEl = document.createElement("div");
     const venueCityEl = document.createElement("p");
@@ -620,13 +620,16 @@ function createTeamVenue(teamData) {
 function resetDisplay() {
     const leagueSection = document.createElement("section");
     const teamSection = document.createElement("section");
+    const mapSection = document.createElement("section");
 
     mainEl.textContent = "";
     leagueSection.setAttribute("id", "league-container");
     teamSection.setAttribute("id", "team-info");
+    mapSection.setAttribute("id", "map-container");
 
     mainEl.appendChild(leagueSection);
     mainEl.appendChild(teamSection);
+    mainEl.appendChild(mapSection);
 }
 
 document.querySelector("#select-country").addEventListener('change', getCountryCode);

@@ -10,7 +10,7 @@ body {
   margin: 0;
   padding: 0;
   color: black;
-  font-family: "Impact";
+  font-family: "tahoma";
   background: url("../images/soccerbacklarge.jpg") no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
@@ -20,8 +20,9 @@ body {
 
 header {
   margin: 20px 20px;
-  padding: 7px 7px;
+  padding: 10px 10px;
   border-radius: 20px;
+  border: 2px solid white;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -34,6 +35,19 @@ header {
   color: white;
   margin: 0px;
   font-size: 3.5vw;
+  text-shadow:
+  -2px -2px 0 #000,  
+  2px -2px 0 #000,
+ -2px  2px 0 #000,
+  2px  2px 0 #000,
+ -1px -2px 0 #000,
+  1px -2px 0 #000,
+ -2px -1px 0 #000,
+  2px -1px 0 #000,
+ -2px  1px 0 #000,
+  2px  1px 0 #000,
+ -1px  2px 0 #000,
+  1px  2px 0 #000;
 }
 
 #soccer-ball {
@@ -53,6 +67,7 @@ header {
   height: 100vw;
   margin-left: 20px;
   border-radius: 20px;
+  border: 2px solid white;
   background-color: var(--main-two);
   font-size: 35px;
   text-align: center;
@@ -61,7 +76,6 @@ header {
 .main {
   grid-area: main;
   height: 100vw;
-  
 }
 
 .dropdown-country {
@@ -73,7 +87,7 @@ header {
   appearance: none;
   width: 95%;
   font-size: 18px;
-  padding: 10px 15px 10px 15px;
+  padding: 15px 15px 15px 15px;
   background-color: #ffffff;
   border: 1px solid var(--main-color);
   border-radius: 10px;
@@ -124,7 +138,7 @@ header {
   appearance: none;
   width: 95%;
   font-size: 18px;
-  padding: 10px 15px 10px 15px;
+  padding: 15px 15px 15px 15px;
   background-color: #ffffff;
   border: 1px solid var(--main-color);
   border-radius: 10px;
@@ -142,32 +156,71 @@ header {
 
 .league-container {
   width: 60%;
-  font-size: 40px;
-  background-color: #800000;
+  font-size: 60px;
+  color: black;
+  border: 2px solid black;
+  border-radius: 20px;
+  background-color: rgba(242, 242, 242, 0.5);
   padding: 5px 5px;
-  margin: 20px auto;
+  margin: 5px auto;
   display: flex;
+  gap: 50px;
   flex-wrap: wrap;
   flex-direction: row;
   justify-content: center;
 }
 
 #league-name {
-	text-align: center;
-	width: 100%;
+  text-align: center;
+  width: 100%;
 }
-
-
 
 .team-info {
   width: 50%;
-  font-size: 30px;
-  background-color: var(--submit-btn-color);
+  font-size: 50px;
+  color: #f2f2f2;
   padding: 15px 5px;
-  margin: 20px 10px;
+  margin: 20px auto 20px 100px;
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
   justify-content: space-between;
   text-align: center;
+  text-shadow:
+  -2px -2px 0 #000,  
+  2px -2px 0 #000,
+ -2px  2px 0 #000,
+  2px  2px 0 #000,
+ -1px -2px 0 #000,
+  1px -2px 0 #000,
+ -2px -1px 0 #000,
+  2px -1px 0 #000,
+ -2px  1px 0 #000,
+  2px  1px 0 #000,
+ -1px  2px 0 #000,
+  1px  2px 0 #000;
+}
+
+#team-logo {
+  width: 200px;
+  height: 200px;
+  object-fit: contain;
+  margin: 0 auto;
+
+}
+
+#stadium {
+  width: 450px;
+  height: 450px;
+  object-fit: contain;
+  margin: 0 auto;
+
+}
+
+.map-display {
+  width: 425px;
+  height: 350px;
+  scroll-behavior: initial;
+  margin: 0px;
+  border: 1px solid black;
 }
