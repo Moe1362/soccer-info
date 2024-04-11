@@ -20,8 +20,17 @@ function getMap(location) {
 	}).then(function(data) {
 		console.log("soccer api");
 		console.log(data);
-		const cityUrl = data.features[0].properties.datasource.url;
-		console.log(cityUrl);
+		
+		const coord1 = data.features[1].bbox[0];
+		const coord2 = data.features[1].bbox[1];
+		const coord3 = data.features[1].bbox[2];
+		const coord4 = data.features[1].bbox[3];
+		const coord5 = data.features[1].geometry.coordinates[0];
+		const coord6 = data.features[1].geometry.coordinates[1];
+
+		const url = `https://www.openstreetmap.org/export/embed.html?bbox=${coord1}%2C${coord2}%2C${coord3}%2C${coord4}&amp;layer=mapnik&amp;marker=${coord5}%2C${coord6}`
+
+		console.log(url);
 	})
 }
 
