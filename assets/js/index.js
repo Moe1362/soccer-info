@@ -10,6 +10,9 @@ const options = {
     }
 };
 
+
+
+
 let teamInfoList = [];
 
 function display() {
@@ -24,14 +27,14 @@ function display() {
         for (let i = 0; i < countriesId.length; i++) {
             //console.log(countriesId[i].code, countriesId[i].flag);
             if (countriesId[i].name === userCountry) {
-                console.log(countriesId[i]);
-                console.log(countriesId[i].code);
+                //console.log(countriesId[i]);
+                //console.log(countriesId[i].code);
                 const countryCodeUrl = `https://api-football-v1.p.rapidapi.com/v3/leagues?code=${countriesId[i].code}`;
                 
                 fetch(countryCodeUrl, options).then(function (response) {
                     return response.json();
                 }).then(function (data2) {
-                    console.log(data2);
+                    //console.log(data2);
                     
                     for (let i = 0; i < data2.response.length; i++) {
                         console.log(data2.response[i]);
@@ -141,7 +144,7 @@ function display() {
                                         return response.json();
                                     }).then(function (data3) {
                                         
-                                        console.log(data3);
+                                        //console.log(data3);
                                         const teamName = document.querySelector("#select-team");
                                         teamName.innerHTML = "";
 
