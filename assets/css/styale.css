@@ -206,3 +206,11 @@ header {
   margin: 0 auto;
 
 }
+
+.map-display {
+  width: 425px;
+  height: 350px;
+  scroll-behavior: initial;
+  margin: 0px;
+  border: 1px solid black;
+}
