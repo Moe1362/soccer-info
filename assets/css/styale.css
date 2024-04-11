@@ -217,6 +217,13 @@ header {
 
 }
 
+#map-container {
+  width: 80%;
+  padding: 15px 5px;
+  margin-left: 33%;
+  
+}
+
 .map-display {
   width: 425px;
   height: 350px;
@@ -268,10 +275,27 @@ header {
   .team-info {
     width: 80%; 
     margin: 20px auto; 
+    text-align: center;
+    font-size: min(5vw, 24px);
   }
 
   #team-logo, #stadium {
     max-width: 100%; 
     height: auto; 
   }
+
+  #map-container {
+    width: 100%; 
+    padding: 15px 0; 
+    margin: 0 auto; 
+    text-align: center; 
+  }
+
+  .map-display {
+    width: 90%; 
+    height: auto; 
+    margin: 10px auto; 
+    border: 1px solid black; 
+  }
+
 }
