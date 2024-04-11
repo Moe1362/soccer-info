@@ -176,8 +176,8 @@ header {
 }
 
 .team-info {
-  width: 50%;
-  font-size: 50px;
+  width: 80%;
+  font-size: 55px;
   color: #f2f2f2;
   padding: 15px 5px;
   margin: 20px auto 20px 100px;
@@ -215,6 +215,13 @@ header {
   object-fit: contain;
   margin: 0 auto;
 
+}
+
+#map-container {
+  width: 80%;
+  padding: 15px 5px;
+  margin-left: 33%;
+  
 }
 
 .map-display {
@@ -260,12 +267,7 @@ header {
   }
 
   .sidebar, .main {
-      height: auto;
-      margin-right: 20px;
-  }
-
-  #select-country, #select-team {
-    width: 98%;
+      height: auto; 
   }
 
   .title {
@@ -286,7 +288,7 @@ header {
   }
 
   .league-name {
-    font-size: min(5vw, 24px); 
+    font-size: min(5vw, 30px); 
   }
 
   .league-container img {
@@ -297,6 +299,8 @@ header {
   .team-info {
     width: 80%; 
     margin: 20px auto; 
+    text-align: center;
+    font-size: min(5vw, 24px);
   }
 
   #team-logo, #stadium {
@@ -305,6 +309,17 @@ header {
   }
 
   #map-container {
-    text-align: center;
+    width: 100%; 
+    padding: 15px 0; 
+    margin: 0 auto; 
+    text-align: center; 
   }
+
+  .map-display {
+    width: 90%; 
+    height: auto; 
+    margin: 10px auto; 
+    border: 1px solid black; 
+  }
+
 }
