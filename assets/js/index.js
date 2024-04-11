@@ -574,6 +574,7 @@ function selectTeam() {
         if (teamInfoList[i].teamName === selection) {
             createTeamInfo(teamInfoList[i]);
             createTeamVenue(teamInfoList[i]);
+            getMap(teamInfoList[i]);
         }
     }
 }

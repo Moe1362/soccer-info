@@ -1,7 +1,8 @@
-const teamName = document.querySelector("#select-team");
+const cityName = document.querySelector("#city-container")
 
 
-const url1 = 'https://geocode-address-to-location.p.rapidapi.com/v1/geocode/search?text="Carrer de l&apos;Estadi"';
+
+
 const options1 = {
 	method: 'GET',
 	headers: {
@@ -10,12 +11,24 @@ const options1 = {
 	}
 };
 
-fetch(url1, options1).then(function(response) {
-    return response.json();
-   
-}).then(function(data) {
-    console.log("soccer api");
-    console.log(data);
-    
-    
-})
+
+function getMap(location) {
+	const url1 = `https://geocode-address-to-location.p.rapidapi.com/v1/geocode/search?text=${location.venueName}`;
+	fetch(url1, options1).then(function(response) {
+		return response.json();
+	   
+	}).then(function(data) {
+		console.log("soccer api");
+		console.log(data);
+		
+		
+
+		
+	
+	
+		
+		
+	})
+}
+
+
