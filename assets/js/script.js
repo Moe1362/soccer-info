@@ -20,14 +20,8 @@ function getMap(location) {
 	}).then(function(data) {
 		console.log("soccer api");
 		console.log(data);
-		
-		
-
-		
-	
-	
-		
-		
+		const cityUrl = data.features[0].properties.datasource.url;
+		console.log(cityUrl);
 	})
 }
 
