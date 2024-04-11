@@ -236,7 +236,12 @@ header {
   }
 
   .sidebar, .main {
-      height: auto; 
+      height: auto;
+      margin-right: 20px;
+  }
+
+  #select-country, #select-team {
+    width: 98%;
   }
 
   .title {
@@ -273,5 +278,9 @@ header {
   #team-logo, #stadium {
     max-width: 100%; 
     height: auto; 
+  }
+
+  #map-container {
+    text-align: center;
   }
 }

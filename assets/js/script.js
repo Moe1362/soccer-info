@@ -7,6 +7,8 @@ const options1 = {
 };
 
 function getCoords(location) {
+	resetMap();
+
 	const coordsUrl = `https://geocode-address-to-location.p.rapidapi.com/v1/geocode/search?text=${location.venueName}`;
 	fetch(coordsUrl, options1).then(function (response) {
 		return response.json();
@@ -18,7 +20,8 @@ function getCoords(location) {
 			const userCountry = document.querySelector("#select-country").value;
 
 			//if (data.features[i].properties.country === "Spain") {
-			if (data.features[i].properties.country === userCountry) {
+			if ((data.features[i].properties.country === userCountry) ||
+				(data.features[i].properties.state === userCountry)) {
 				
 				if (data.features[i].properties.category === "sport.stadium") {
 					const boxCoords1 = data.features[i].bbox[0];
@@ -85,6 +88,11 @@ function generateMap(mapUrl) {
 
 	mapContainerEl.innerHTML = "";
 	mapContainerEl.appendChild(frameEl);
+}
+
+function resetMap() {
+	const mapContainerEl = document.querySelector('#map-container');
+	mapContainerEl.innerHTML = "";
 }
 
 function testMap() {
