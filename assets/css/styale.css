@@ -155,7 +155,7 @@ header {
 }
 
 .league-container {
-  width: 60%;
+  width: 80%;
   font-size: 60px;
   color: black;
   border: 2px solid black;
@@ -223,4 +223,28 @@ header {
   scroll-behavior: initial;
   margin: 0px;
   border: 1px solid black;
+}
+
+@media screen and (max-width: 768px) {
+  .container {
+      grid-template-areas:
+          "sidebar"
+          "main";
+      grid-template-columns: auto;
+      /* Adjust padding or any other property as needed */
+  }
+  .sidebar, .main {
+      height: auto; /* Adjust height for mobile */
+  }
+  .title {
+      font-size: 5vw; /* Increase size for better readability on small screens */
+  }
+  #soccer-ball, #team-logo, #stadium {
+      width: 100px; /* Adjust sizes for smaller screens */
+      height: auto; /* Maintain aspect ratio */
+  }
+  .league-container, .team-info {
+      width: 90%; /* Adjust width to fit small screens */
+      font-size: 4vw; /* Adjust font size for readability */
+  }
 }
