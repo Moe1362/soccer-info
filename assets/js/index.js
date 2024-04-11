@@ -585,6 +585,7 @@ function createTeamInfo(teamData) {
     const teamFoundedEl = document.createElement("p");
 
     teamNameEl.textContent = teamData.teamName;
+    teamLogoEl.setAttribute("id", "team-logo");
     teamLogoEl.setAttribute("src", `${teamData.teamLogo}`);
     teamFoundedEl.textContent = `Founded in: ${teamData.teamFounded}`
 
@@ -607,6 +608,7 @@ function createTeamVenue(teamData) {
 
     venueCityEl.textContent = `Located in: ${teamData.venueCity}`;
     venueNameEl.textContent = `Venue: ${teamData.venueName}`;
+    venueImageEl.setAttribute("id", "stadium");
     venueImageEl.setAttribute("src", `${teamData.venueImage}`);
     venueCapacityEl.textContent = `Venue Capacity: ${teamData.venueCapacity}`
 
