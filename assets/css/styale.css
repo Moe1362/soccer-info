@@ -118,7 +118,7 @@ header {
 
 .dropdown-teams {
   position: relative;
-  margin-top: 55px;
+  margin: 55px 0px 39px 0px;
 }
 
 .dropdown-teams::after {
@@ -246,5 +246,56 @@ header {
   .league-container, .team-info {
       width: 90%; /* Adjust width to fit small screens */
       font-size: 4vw; /* Adjust font size for readability */
+  }
+}
+
+
+
+@media screen and (max-width: 768px) {
+  .container {
+      grid-template-areas:
+          "sidebar"
+          "main";
+      grid-template-columns: auto;
+  }
+
+  .sidebar, .main {
+      height: auto; 
+  }
+
+  .title {
+      font-size: 8vw;
+  }
+
+  #soccer-ball {
+      width: 80px; 
+      height: auto; 
+  }
+
+  .league-container {
+    flex-direction: column; 
+    align-items: center; 
+    text-align: center; 
+    font-size: min(5vw, 24px); 
+    gap: 20px; 
+  }
+
+  .league-name {
+    font-size: min(5vw, 24px); 
+  }
+
+  .league-container img {
+    max-width: 80%; 
+    height: auto; 
+  }
+
+  .team-info {
+    width: 80%; 
+    margin: 20px auto; 
+  }
+
+  #team-logo, #stadium {
+    max-width: 100%; 
+    height: auto; 
   }
 }
