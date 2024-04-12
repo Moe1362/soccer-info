@@ -4,7 +4,7 @@ const url = 'https://api-football-v1.p.rapidapi.com/v3/countries';
 const mainEl = document.querySelector('.main');
 
 // API configuration
-const options = {
+const soccerOptions = {
     method: 'GET',
     headers: {
         'X-RapidAPI-Key': 'c4a75d9930msh9a64489fdec6eddp1ecc48jsnf0c05560708b',
@@ -26,7 +26,7 @@ function getCountryCode() {
     const userCountry = document.querySelector("#select-country").value;
 
     // Fetch request
-    fetch(url, options).then(function (response) {
+    fetch(url, soccerOptions).then(function (response) {
         return response.json();
     }).then(function (data) {
         // Get all the list of responses

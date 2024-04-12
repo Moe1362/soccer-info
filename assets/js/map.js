@@ -1,5 +1,5 @@
 // API configuration
-const options1 = {
+const mapOptions = {
 	method: 'GET',
 	headers: {
 		'X-RapidAPI-Key': 'aae0c5abcemsh6bf0e83148c0bd5p195e59jsnb058a75e4341',
@@ -26,7 +26,7 @@ function getCoords(location) {
 	const coordsUrl = `https://geocode-address-to-location.p.rapidapi.com/v1/geocode/search?text=${updateQuery}`;
 	
 	// Fetch request
-	fetch(coordsUrl, options1).then(function (response) {
+	fetch(coordsUrl, mapOptions).then(function (response) {
 		return response.json();
 	}).then(function (data) {
 		// Go through each response
