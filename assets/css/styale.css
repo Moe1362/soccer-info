@@ -177,13 +177,13 @@ header {
 
 .team-info {
   width: 80%;
-  font-size: 55px;
+  font-size: 35px;
   color: #f2f2f2;
   padding: 15px 5px;
-  margin: 20px auto 20px 100px;
+  margin: 20px auto 20px 50px;
   display: flex;
   flex-wrap: wrap;
-  flex-direction: column;
+  flex-direction: row;
   justify-content: space-between;
   text-align: center;
   text-shadow:
@@ -201,64 +201,77 @@ header {
   1px  2px 0 #000;
 }
 
+.team, .venue {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex: 1 1 33%;
+}
+
+.team p, .venue p {
+  margin: 15px;
+  font-size: 2.5vw;
+}
+
 #team-logo {
-  width: 200px;
-  height: 200px;
+  width: 15vw;
+  height: 15vw;
   object-fit: contain;
   margin: 0 auto;
-
 }
 
 #stadium {
-  width: 450px;
-  height: 450px;
+  width: 300px;
+  height: 250px;
   object-fit: contain;
   margin: 0 auto;
-
 }
 
 #map-container {
   width: 80%;
   padding: 15px 5px;
-  margin-left: 33%;
-  
+  margin-left: 27%;
 }
 
 .map-display {
-  width: 425px;
-  height: 350px;
-  scroll-behavior: initial;
+  width: 35vw;
+  height: 27.5vw;
+  scroll-behavior: smooth;
   margin: 0px;
   border: 1px solid black;
 }
 
-@media screen and (max-width: 768px) {
-  .container {
-      grid-template-areas:
-          "sidebar"
-          "main";
-      grid-template-columns: auto;
-      /* Adjust padding or any other property as needed */
-  }
-  .sidebar, .main {
-      height: auto; /* Adjust height for mobile */
-  }
-  .title {
-      font-size: 5vw; /* Increase size for better readability on small screens */
-  }
-  #soccer-ball, #team-logo, #stadium {
-      width: 100px; /* Adjust sizes for smaller screens */
-      height: auto; /* Maintain aspect ratio */
-  }
-  .league-container, .team-info {
-      width: 90%; /* Adjust width to fit small screens */
-      font-size: 4vw; /* Adjust font size for readability */
-  }
+.footer {
+  width: 96%;
+  font-size: 60px;
+  color: black;
+  border: 2px solid black;
+  border-radius: 20px;
+  background-color: rgba(242, 242, 242, 0.5);
+  padding: 5px 5px;
+  margin: 5px auto;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  position: relative;
 }
 
+.footer p {
+  font-size: 50px;
+  text-align: center;
+  padding: 10px;
+  margin-top: 50px;
+}
 
+#github {
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+}
 
-@media screen and (max-width: 1000px) {
+@media screen and (max-width: 992px) {
   .container {
       grid-template-areas:
           "sidebar"
@@ -267,7 +280,8 @@ header {
   }
 
   .sidebar, .main {
-      height: auto; 
+      height: auto;
+      margin-right: 20px;
   }
 
   .title {
@@ -277,6 +291,11 @@ header {
   #soccer-ball {
       width: 80px; 
       height: auto; 
+  }
+
+  #select-country, #select-team {
+    width: 99%;
+    box-shadow: 1.5px 1.5px 1px 0px darkblue;
   }
 
   .league-container {
@@ -311,39 +330,52 @@ header {
   #map-container {
     width: 100%; 
     padding: 15px 0; 
-    margin: 0 auto; 
+    margin: 15px; 
     text-align: center; 
   }
 
   .map-display {
-    width: 90%; 
-    height: auto; 
+    width: 70%; 
+    height: 35vw; 
     margin: 10px auto; 
     border: 1px solid black; 
   }
+}
+
+@media screen and (max-width: 768px) {
+  header {
+    margin: 5px;
+    padding: 0px;
+  }
+
+  .container {
+      grid-template-areas:
+          "sidebar"
+          "main";
+      grid-template-columns: auto;
+      /* Adjust padding or any other property as needed */
+  }
+
+  .sidebar, .main {
+      height: auto; /* Adjust height for mobile */
+  }
+
+  .title {
+      font-size: 5vw; /* Increase size for better readability on small screens */
+  }
   
-
-}
-.footer {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  ;
-}
-
-.footer p {
-  font-size: 50px;
-  color:var(--body-main);
-  text-align: center;
-  padding: 10px;
-  margin-top: 50px;
-}
-
-.Icon img{
-  border-radius: 50%;
-  width: 100px;
-  height: 100px;
-  margin-left: 50%;
+  #soccer-ball, #team-logo, #stadium {
+      width: 100px; /* Adjust sizes for smaller screens */
+      height: auto; /* Maintain aspect ratio */
+  }
   
+  #select-country, #select-team {
+    width: 98%;
+  }
 
+  .league-container, .team-info {
+      width: 90%; /* Adjust width to fit small screens */
+      font-size: 4vw; /* Adjust font size for readability */
+      margin-left: 30px;
+  }
 }
