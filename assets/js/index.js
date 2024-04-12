@@ -580,6 +580,7 @@ function createTeamInfo(teamData) {
     const teamInfoEl = document.querySelector('#team-info');
     //console.log(teamData);
 
+    const teamContainerEl = document.createElement("article");
     const teamNameEl = document.createElement("p");
     const teamLogoEl = document.createElement("img");
     const teamFoundedEl = document.createElement("p");
@@ -589,18 +590,21 @@ function createTeamInfo(teamData) {
     teamLogoEl.setAttribute("src", `${teamData.teamLogo}`);
     teamFoundedEl.textContent = `Founded in: ${teamData.teamFounded}`
 
+    teamContainerEl.setAttribute("class", "team");
+    teamContainerEl.appendChild(teamNameEl);
+    teamContainerEl.appendChild(teamLogoEl);
+    teamContainerEl.appendChild(teamFoundedEl);
+
     teamInfoEl.innerHTML = "";
     teamInfoEl.setAttribute("class", "team-info");
-    teamInfoEl.appendChild(teamNameEl);
-    teamInfoEl.appendChild(teamLogoEl);
-    teamInfoEl.appendChild(teamFoundedEl);
+    teamInfoEl.appendChild(teamContainerEl);
 }
 
 function createTeamVenue(teamData) {
     const teamInfoEl = document.querySelector('#team-info');
     //console.log(teamData);
                                         
-    const venueContainerEl = document.createElement("div");
+    const venueContainerEl = document.createElement("article");
     const venueCityEl = document.createElement("p");
     const venueNameEl = document.createElement("p");
     const venueImageEl = document.createElement("img");
@@ -612,6 +616,7 @@ function createTeamVenue(teamData) {
     venueImageEl.setAttribute("src", `${teamData.venueImage}`);
     venueCapacityEl.textContent = `Venue Capacity: ${teamData.venueCapacity}`
 
+    venueContainerEl.setAttribute("class", "venue");
     venueContainerEl.appendChild(venueCityEl);
     venueContainerEl.appendChild(venueNameEl);
     venueContainerEl.appendChild(venueImageEl);
