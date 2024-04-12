@@ -1,3 +1,4 @@
+/* Color Palette */
 :root {
   --main-color: #021e73;
   --main-two: #0176f2;
@@ -6,6 +7,7 @@
   --submit-btn-color: #ffd45a;
 }
 
+/* Implement a background image that moves with the scrolling of the screen */
 body {
   margin: 0;
   padding: 0;
@@ -18,7 +20,8 @@ body {
   background-size: cover;
 }
 
-header {
+/* Header class */
+.header {
   margin: 20px 20px;
   padding: 10px 10px;
   border-radius: 20px;
@@ -31,6 +34,7 @@ header {
   background-color: var(--main-color);
 }
 
+/* Title of header */
 .title {
   color: white;
   margin: 0px;
@@ -50,11 +54,13 @@ header {
   1px  2px 0 #000;
 }
 
+/* Soccer ball image */
 #soccer-ball {
   width: 85px;
   padding: 10px;
 }
 
+/* Container for the side bar and main content */
 .container {
   width: 100%;
   display: grid;
@@ -62,6 +68,7 @@ header {
   grid-template-columns: 250px auto;
 }
 
+/* Positioning of siderbar */
 .sidebar {
   grid-area: sidebar;
   height: 100vw;
@@ -73,16 +80,19 @@ header {
   text-align: center;
 }
 
+/* Main content display adjustments */
 .main {
   grid-area: main;
   height: 100vw;
 }
 
+/* Position of dropdown menu */
 .dropdown-country {
   position: relative;
   margin-top: 39px;
 }
 
+/* Select country options */
 #select-country {
   appearance: none;
   width: 95%;
@@ -97,12 +107,14 @@ header {
   box-shadow: 3px 3px 2px 0px darkblue;
 }
 
+/* Focus when selecting a country */
 #select-country:focus {
   background: #f2f2f2;
   border: 1px solid #5a7ec7;
   border-radius: 5px;
 }
 
+/* When opening the dropdown for the countries */
 .dropdown-country::after {
   content: "";
   position: absolute;
@@ -116,11 +128,13 @@ header {
   clip-path: polygon(8% 17%, 0% 25%, 50% 84%, 100% 25%, 92% 17%, 50% 65%);
 }
 
+/* Position of dropdown menu */
 .dropdown-teams {
   position: relative;
   margin: 55px 0px 39px 0px;
 }
 
+/* When opening the dropdown for the teams */
 .dropdown-teams::after {
   content: "";
   position: absolute;
@@ -134,6 +148,7 @@ header {
   clip-path: polygon(8% 17%, 0% 25%, 50% 84%, 100% 25%, 92% 17%, 50% 65%);
 }
 
+/* Select team options */
 #select-team {
   appearance: none;
   width: 95%;
@@ -148,12 +163,14 @@ header {
   box-shadow: 3px 3px 2px 0px darkblue;
 }
 
+/* Focus when selecting a team */
 #select-team:focus {
   background: #f2f2f2;
   border: 1px solid #5a7ec7;
   border-radius: 5px;
 }
 
+/* Alignment of league name and logo */
 .league-container {
   width: 80%;
   font-size: 60px;
@@ -170,11 +187,13 @@ header {
   justify-content: center;
 }
 
+/* Adjustment's to league name and logo */
 #league-name {
   text-align: center;
   width: 100%;
 }
 
+/* Position of the team's information */
 .team-info {
   width: 80%;
   font-size: 35px;
@@ -201,6 +220,7 @@ header {
   1px  2px 0 #000;
 }
 
+/* Position of the team's information */
 .team, .venue {
   display: flex;
   flex-direction: column;
@@ -208,11 +228,13 @@ header {
   flex: 1 1 33%;
 }
 
+/* Text of all the team's information */
 .team p, .venue p {
   margin: 15px;
   font-size: 2.5vw;
 }
 
+/* Image adjustment for logo of the team */
 #team-logo {
   width: 15vw;
   height: 15vw;
@@ -220,6 +242,7 @@ header {
   margin: 0 auto;
 }
 
+/* Image adjustment for team's venue stadium */
 #stadium {
   width: 300px;
   height: 250px;
@@ -227,12 +250,14 @@ header {
   margin: 0 auto;
 }
 
+/* Position of the map on the webpage */
 #map-container {
   width: 80%;
   padding: 15px 5px;
   margin-left: 27%;
 }
 
+/* Size adjustment for the map display */
 .map-display {
   width: 35vw;
   height: 27.5vw;
@@ -241,6 +266,7 @@ header {
   border: 1px solid black;
 }
 
+/* Footer class */
 .footer {
   width: 96%;
   font-size: 60px;
@@ -258,6 +284,7 @@ header {
   position: relative;
 }
 
+/* Text in footer */
 .footer p {
   font-size: 50px;
   text-align: center;
@@ -265,6 +292,7 @@ header {
   margin-top: 50px;
 }
 
+/* Github icon */
 #github {
   border-radius: 50%;
   width: 100px;
