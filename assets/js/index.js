@@ -571,7 +571,7 @@ function selectTeam() {
         if (teamInfoList[i].teamName === selection) {
             createTeamInfo(teamInfoList[i]);
             createTeamVenue(teamInfoList[i]);
-            getCoords(teamInfoList[i]);
+            testCoords(teamInfoList[i]);
         }
     }
 }
