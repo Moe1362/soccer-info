@@ -51,7 +51,7 @@ function getLeagues(countryCode) {
     const countryCodeUrl = `https://api-football-v1.p.rapidapi.com/v3/leagues?code=${countryCode}`;
 
     // Fetch request
-    fetch(countryCodeUrl, options).then(function (response) {
+    fetch(countryCodeUrl, soccerOptions).then(function (response) {
         return response.json();
     }).then(function (data) {
         // Go through each response
@@ -109,7 +109,7 @@ function getTeams(leagueData) {
     const teamUrl = `https://api-football-v1.p.rapidapi.com/v3/teams?league=${leagueData}&season=2023`;
 
     // Fetch request
-    fetch(teamUrl, options).then(function (response) {
+    fetch(teamUrl, soccerOptions).then(function (response) {
         return response.json();
     }).then(function (data) {
         populateSelectTeam(data);

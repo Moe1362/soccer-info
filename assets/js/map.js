@@ -11,7 +11,7 @@ const mapOptions = {
   This function gets the coordinates given a query and attempts to get the geolocation.
   It takes in the location as a parameter and extracts specific fields to build the query.
 */
-function getCoords(location) {
+async function getCoords(location) {
 	// Reset the map display
 	resetMap();
 
@@ -28,7 +28,7 @@ function getCoords(location) {
 	// Fetch request
 	fetch(coordsUrl, mapOptions).then(function (response) {
 		return response.json();
-	}).then(function (data) {
+	}).then(async function (data) {
 		// Go through each response
 		for (let i = 0; i < data.features.length; i++) {
 			// Look for specific match cases (required multiple because of different API data)
@@ -125,7 +125,7 @@ function getCoords(location) {
 				
 				// First retry attempt combination
 				if (i === 0) {
-					newFetchAttempt(location, `${location.venueName} in ${location.venueCity}`);
+					await newFetchAttempt(location, `${location.venueName} in ${location.venueCity}`);
 					// If a map was able to be generated we can exit the function
 					if (mapContainerEl.innerHTML.length !== 0) {
 						return;
@@ -134,7 +134,7 @@ function getCoords(location) {
 
 				// Second retry attempt combination
 				else if (i === 1) {
-					newFetchAttempt(location, `${location.venueName} in ${userCountry}`);
+					await newFetchAttempt(location, `${location.venueName} in ${userCountry}`);
 					// If a map was able to be generated we can exit the function
 					if (mapContainerEl.innerHTML.length !== 0) {
 						return;
@@ -143,7 +143,7 @@ function getCoords(location) {
 
 				// Third retry attempt combination
 				else if (i === 2) {
-					newFetchAttempt(location, `${location.venueName} in ${location.venueCity} in ${userCountry}`);
+					await newFetchAttempt(location, `${location.venueName} in ${location.venueCity} in ${userCountry}`);
 					// If a map was able to be generated we can exit the function
 					if (mapContainerEl.innerHTML.length !== 0) {
 						return;
@@ -217,7 +217,7 @@ function generateMap(mapUrl) {
   It takes in the location as a parameter and compares the values to the response fields.
   It takes in a customized query that can help with geolocation by attempting another fetch.
 */
-function newFetchAttempt(location, newQuery) {
+async function newFetchAttempt(location, newQuery) {
 	// Variables that we will need for each part
 	const userCountry = document.querySelector("#select-country").value;
 	let category;
@@ -227,7 +227,7 @@ function newFetchAttempt(location, newQuery) {
 	const coordsUrl = `https://geocode-address-to-location.p.rapidapi.com/v1/geocode/search?text=${newQuery}`;
 
 	// Fetch request
-	fetch(coordsUrl, options1).then(function (response) {
+	await fetch(coordsUrl, mapOptions).then(function (response) {
 		return response.json();
 	}).then(function (data) {
 		// Go through each response
